@@ -49,22 +49,23 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/logo.png
-    - assets/images/beach.png
-    - assets/images/cyberport-logo.png
-    - assets/images/download-app-qr-code.png
-    - assets/images/fb-icon.png
-    - assets/images/friends-1.png
-    - assets/images/friends-2.png
-    - assets/images/friends-in-sea.png
-    - assets/images/glass-group.png
-    - assets/images/whtie-logo.png
-    - assets/images/whatsapp-icon.png
-    - assets/images/myicellar-app-shop.png
-    - assets/images/cathay-pacific-logo.png
-    - assets/images/ig-icon.png
-    - assets/images/apple-store-myicellar-app.png
-    - assets/images/google-play-store-myicellar-app.png
+    - assets/images/
+#    - assets/images/logo.png
+#    - assets/images/beach.png
+#    - assets/images/cyberport-logo.png
+#    - assets/images/download-app-qr-code.png
+#    - assets/images/fb-icon.png
+#    - assets/images/friends-1.png
+#    - assets/images/friends-2.png
+#    - assets/images/friends-in-sea.png
+#    - assets/images/glass-group.png
+#    - assets/images/whtie-logo.png
+#    - assets/images/whatsapp-icon.png
+#    - assets/images/myicellar-app-shop.png
+#    - assets/images/cathay-pacific-logo.png
+#    - assets/images/ig-icon.png
+#    - assets/images/apple-store-myicellar-app.png
+#    - assets/images/google-play-store-myicellar-app.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
