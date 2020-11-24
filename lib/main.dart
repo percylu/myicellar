@@ -7,6 +7,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'generated/l10n.dart';
 
 const APPBAR_SCROLL_OFFSET = 80;
+
 void main() {
   runApp(MyApp());
 }
@@ -68,30 +69,33 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     return Scaffold(
-      body: Stack(children: <Widget>[
-        MediaQuery.removePadding(
-            context: context,
-            removeTop: true,
-            child: RefreshIndicator(
-              onRefresh: _handleRefresh,
-              child: NotificationListener(
-                // ignore: missing_return
-                onNotification: (scrollNotification) {
-                  if (scrollNotification is ScrollUpdateNotification &&
-                      scrollNotification.depth == 0) {
-                    _onScroll(scrollNotification.metrics.pixels);
-                  }
-                },
-                child: _listView,
-              ),
-            )),
-        _appbar
-      ]),
+      body: Container(
+        alignment: Alignment.center,
+        child: Stack(children: <Widget>[
+          MediaQuery.removePadding(
+              context: context,
+              removeTop: true,
+              child: RefreshIndicator(
+                onRefresh: _handleRefresh,
+                child: NotificationListener(
+                  // ignore: missing_return
+                  onNotification: (scrollNotification) {
+                    if (scrollNotification is ScrollUpdateNotification &&
+                        scrollNotification.depth == 0) {
+                      _onScroll(scrollNotification.metrics.pixels);
+                    }
+                  },
+                  child: _listView,
+                ),
+              )),
+          _appbar
+        ]),
+      ),
 
       // body: Column(
       //     // mainAxisAlignment: MainAxisAlignment.center,
       //     children: <Widget>[
-      //       Image.asset('images/logo.png', width: 100),
+      //       Image.asset('assets/images/logo.png', width: 100),
       //       Text(S.of(context).title),
       //       Text(
       //         'You have pushed the button this many times:',
@@ -126,24 +130,25 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget get _listView {
     Size size = screenSize;
-    Widget bigScreen = ListView(
+    Widget bigScreen =
+    Container(constraints: BoxConstraints(maxWidth: 1440),
+    child: ListView(
       children: <Widget>[
         Container(
             width: size.width,
             alignment: Alignment.bottomCenter,
-            height: size.height / 1.2,
+            // height: size.height / 1.2,
             child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.end,
+              // crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                      margin: EdgeInsets.fromLTRB(30, 30, 30, 10),
+                      margin: EdgeInsets.fromLTRB(30, 180, 30, 10),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text('从此踏上你的美酒之旅。',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              
                                 fontSize: 40, fontWeight: FontWeight.bold)),
                       )),
                   Container(
@@ -151,38 +156,38 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: [
                         Image.asset(
-                          'images/download-app-qr-code.png',
+                          'assets/images/download-app-qr-code.png',
                           width: 100,
                         ),
                         Container(
                             margin: EdgeInsets.only(left: 20),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                              Container(
-                                  margin: EdgeInsets.only(bottom: 30),
-                                  child: Text('酒迷必备手机程式...',
-                                          style: TextStyle(fontSize: 18))),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    margin: EdgeInsets.only(right: 20),
-                                    child: Image.asset(
-                                        'images/apple-store-myicellar-app.png',
-                                        width: 150),
+                                      margin: EdgeInsets.only(bottom: 30),
+                                      child: Text('酒迷必备手机程式...',
+                                          style: TextStyle(fontSize: 18))),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(right: 20),
+                                        child: Image.asset(
+                                            'assets/images/apple-store-myicellar-app.png',
+                                            width: 150),
+                                      ),
+                                      Container(
+                                          child: Image.asset(
+                                              'assets/images/google-play-store-myicellar-app.png',
+                                              width: 150)),
+                                    ],
                                   ),
-                                  Container(
-                                      child: Image.asset(
-                                          'images/google-play-store-myicellar-app.png',
-                                          width: 150)),
-                                ],
-                              ),
-                            ]))
+                                ]))
                       ],
                     ),
                   ),
-                  Image.asset('images/beach.png')
+                  Image.asset('assets/images/beach.png')
                 ]),
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -221,19 +226,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               Align(
                                 alignment: FractionalOffset.centerLeft,
-                                child: Image.asset('images/glass-group.png'),
+                                child: Image.asset('assets/images/glass-group.png'),
                               )
                             ],
                           )))),
-              Image.asset('images/myicellar-app-shop.png'),
+              Image.asset('assets/images/myicellar-app-shop.png'),
             ])),
         Container(
             margin: EdgeInsets.all(50),
             child: Row(children: <Widget>[
-              Image.asset('images/myicellar-app-event-list.png'),
+              Image.asset('assets/images/myicellar-app-event-list.png'),
               Expanded(
                   child: Container(
-                      // margin: EdgeInsets.only(right: size.width / 5),
+                    // margin: EdgeInsets.only(right: size.width / 5),
                       child: Align(
                           alignment: Alignment.centerLeft,
                           child: Column(
@@ -255,14 +260,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               )
                             ],
                           )))),
-              Image.asset('images/friends-1.png'),
+              Image.asset('assets/images/friends-1.png'),
             ])),
         Container(
             margin: EdgeInsets.all(50),
             child: Row(children: <Widget>[
               Expanded(
                   child: Container(
-                      // margin: EdgeInsets.only(right: size.width / 5),
+                    // margin: EdgeInsets.only(right: size.width / 5),
                       child: Align(
                           alignment: Alignment.centerLeft,
                           child: Column(
@@ -284,42 +289,42 @@ class _MyHomePageState extends State<MyHomePage> {
                               )
                             ],
                           )))),
-              Image.asset('images/friends-2.png'),
-              Image.asset('images/myicellar-app-cellar.png'),
+              Image.asset('assets/images/friends-2.png'),
+              Image.asset('assets/images/myicellar-app-cellar.png'),
             ])),
         Container(
             child: Row(children: [
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
-              color: Color(0xff820E0D),
-              child: Column(children: [
-                Text('5000+',
-                    style: TextStyle(fontSize: 38, color: Colors.white)),
-                Text('上架酒款',
-                    style: TextStyle(fontSize: 38, color: Colors.white))
-              ]),
-            ),
-          ),
-          Expanded(
-              child: Container(
-            padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
-            color: Color(0xffccb9a2),
-            child: Column(children: [
-              Text('800+', style: TextStyle(fontSize: 38, color: Colors.white)),
-              Text('品牌阵容', style: TextStyle(fontSize: 38, color: Colors.white))
-            ]),
-          )),
-          Expanded(
-              child: Container(
-            padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
-            color: Color(0xff4a4a4a),
-            child: Column(children: [
-              Text('1500', style: TextStyle(fontSize: 38, color: Colors.white)),
-              Text('品牌活动', style: TextStyle(fontSize: 38, color: Colors.white))
-            ]),
-          ))
-        ])),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
+                  color: Color(0xff820E0D),
+                  child: Column(children: [
+                    Text('5000+',
+                        style: TextStyle(fontSize: 38, color: Colors.white)),
+                    Text('上架酒款',
+                        style: TextStyle(fontSize: 38, color: Colors.white))
+                  ]),
+                ),
+              ),
+              Expanded(
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
+                    color: Color(0xffccb9a2),
+                    child: Column(children: [
+                      Text('800+', style: TextStyle(fontSize: 38, color: Colors.white)),
+                      Text('品牌阵容', style: TextStyle(fontSize: 38, color: Colors.white))
+                    ]),
+                  )),
+              Expanded(
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
+                    color: Color(0xff4a4a4a),
+                    child: Column(children: [
+                      Text('1500', style: TextStyle(fontSize: 38, color: Colors.white)),
+                      Text('品牌活动', style: TextStyle(fontSize: 38, color: Colors.white))
+                    ]),
+                  ))
+            ])),
         Container(
           color: Color(0xfff7f7f7),
           padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
@@ -339,12 +344,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Container(
                     margin: EdgeInsets.only(right: 20),
-                    child: Image.asset('images/apple-store-myicellar-app.png',
+                    child: Image.asset('assets/images/apple-store-myicellar-app.png',
                         width: 200),
                   ),
                   Container(
                       child: Image.asset(
-                          'images/google-play-store-myicellar-app.png',
+                          'assets/images/google-play-store-myicellar-app.png',
                           width: 200)),
                 ],
               ),
@@ -361,11 +366,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Container(
                       margin: EdgeInsets.only(right: 20),
-                      child: Image.asset('images/cathay-pacific-logo.png',
+                      child: Image.asset('assets/images/cathay-pacific-logo.png',
                           width: 300)),
                   Container(
                       child:
-                          Image.asset('images/cyberport-logo.png', width: 300))
+                      Image.asset('assets/images/cyberport-logo.png', width: 300))
                 ],
               ),
             ),
@@ -429,7 +434,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {},
                   )
                 ]),
-            Image.asset('images/friends-in-sea.png')
+            Image.asset('assets/images/friends-in-sea.png')
           ]),
         ),
         Container(
@@ -461,7 +466,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         style: TextStyle(
                                             fontSize: 14, color: Colors.white)),
                                   ),
-                                  Image.asset('images/whatsapp-icon.png',
+                                  Image.asset('assets/images/whatsapp-icon.png',
                                       width: 30),
                                 ],
                               )),
@@ -495,12 +500,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(children: [
                     Container(
                       margin: EdgeInsets.only(bottom: 30),
-                      child: Image.asset('images/whtie-logo.png'),
+                      child: Image.asset('assets/images/whtie-logo.png'),
                     ),
                     Container(
                         child: Text('@2020 MyiCellar All rights reserved.',
                             style:
-                                TextStyle(fontSize: 14, color: Colors.white)))
+                            TextStyle(fontSize: 14, color: Colors.white)))
                   ]),
                 ),
                 Container(
@@ -518,8 +523,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               margin: EdgeInsets.only(bottom: 10),
                               child: Row(
                                 children: [
-                                  Image.asset('images/fb-icon.png', width: 30),
-                                  Image.asset('images/ig-icon.png', width: 30),
+                                  Image.asset('assets/images/fb-icon.png', width: 30),
+                                  Image.asset('assets/images/ig-icon.png', width: 30),
                                 ],
                               )),
                           Container(
@@ -535,25 +540,25 @@ class _MyHomePageState extends State<MyHomePage> {
               ]),
         )
       ],
-    );
+    ));
+
     Widget smallScreen = ListView(
       children: <Widget>[
         Container(
             width: size.width,
             alignment: Alignment.bottomCenter,
-            height: size.height / 1.2,
+            // height: size.height / 1.2,
             child: Column(
                 // crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                      margin: EdgeInsets.fromLTRB(30, 30, 30, 10),
+                      margin: EdgeInsets.fromLTRB(30, 150, 30, 10),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text('从此踏上你的美酒之旅。',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              
                                 fontSize: 40, fontWeight: FontWeight.bold)),
                       )),
                   Container(
@@ -562,24 +567,24 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         Container(
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
                               Container(
                                   margin: EdgeInsets.only(bottom: 30),
                                   child: Text('酒迷必备手机程式...',
-                                          style: TextStyle(fontSize: 18))),
+                                      style: TextStyle(fontSize: 18))),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
                                     margin: EdgeInsets.only(right: 20),
                                     child: Image.asset(
-                                        'images/apple-store-myicellar-app.png',
+                                        'assets/images/apple-store-myicellar-app.png',
                                         width: (size.width / 3) - 20),
                                   ),
                                   Container(
                                       child: Image.asset(
-                                          'images/google-play-store-myicellar-app.png',
+                                          'assets/images/google-play-store-myicellar-app.png',
                                           width: (size.width / 3) - 20)),
                                 ],
                               ),
@@ -587,7 +592,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                  Image.asset('images/beach.png')
+                  Image.asset('assets/images/beach.png')
                 ]),
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -623,7 +628,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ],
                       ))),
-              Image.asset('images/myicellar-app-shop.png',
+              Image.asset('assets/images/myicellar-app-shop.png',
                   width: size.width / 1.5),
             ])),
         Container(
@@ -651,7 +656,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                         ],
                       ))),
-              Image.asset('images/myicellar-app-event-list.png'),
+              Image.asset('assets/images/myicellar-app-event-list.png'),
             ])),
         Container(
             margin: EdgeInsets.all(50),
@@ -678,7 +683,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                         ],
                       ))),
-              Image.asset('images/myicellar-app-cellar.png'),
+              Image.asset('assets/images/myicellar-app-cellar.png'),
             ])),
         Container(
             child: Column(children: [
@@ -731,12 +736,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Container(
                     margin: EdgeInsets.only(right: 20),
-                    child: Image.asset('images/apple-store-myicellar-app.png',
+                    child: Image.asset('assets/images/apple-store-myicellar-app.png',
                         width: (size.width / 3) - 20),
                   ),
                   Container(
                       child: Image.asset(
-                          'images/google-play-store-myicellar-app.png',
+                          'assets/images/google-play-store-myicellar-app.png',
                           width: (size.width / 3) - 20)),
                 ],
               ),
@@ -753,10 +758,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Container(
                       margin: EdgeInsets.only(right: 20),
-                      child: Image.asset('images/cathay-pacific-logo.png',
+                      child: Image.asset('assets/images/cathay-pacific-logo.png',
                           width: (size.width / 3) - 20)),
                   Container(
-                      child: Image.asset('images/cyberport-logo.png',
+                      child: Image.asset('assets/images/cyberport-logo.png',
                           width: (size.width / 3) - 20))
                 ],
               ),
@@ -821,7 +826,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {},
               ),
             ),
-            Image.asset('images/friends-in-sea.png')
+            Image.asset('assets/images/friends-in-sea.png')
           ]),
         ),
         Container(
@@ -853,7 +858,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         style: TextStyle(
                                             fontSize: 14, color: Colors.white)),
                                   ),
-                                  Image.asset('images/whatsapp-icon.png',
+                                  Image.asset('assets/images/whatsapp-icon.png',
                                       width: 20),
                                 ],
                               )),
@@ -898,8 +903,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               margin: EdgeInsets.only(bottom: 10),
                               child: Row(
                                 children: [
-                                  Image.asset('images/fb-icon.png', width: 30),
-                                  Image.asset('images/ig-icon.png', width: 30),
+                                  Image.asset('assets/images/fb-icon.png', width: 30),
+                                  Image.asset('assets/images/ig-icon.png', width: 30),
                                 ],
                               )),
                           Container(
@@ -915,7 +920,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Column(children: [
                   Container(
                     margin: EdgeInsets.only(bottom: 30),
-                    child: Image.asset('images/whtie-logo.png'),
+                    child: Image.asset('assets/images/whtie-logo.png'),
                   ),
                   Container(
                       child: Text('@2020 MyiCellar All rights reserved.',
@@ -927,7 +932,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     return isBigScreen ? bigScreen : smallScreen;
   }
-
 
   Widget get _bannerSwiper {
     List banners = [
@@ -978,11 +982,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget get _appbar {
     Widget bigScreen = Container(
+      constraints: BoxConstraints(maxWidth: 1440),
       color: appbarBgColor,
       child: Padding(
           padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
           child: Row(children: [
-            Image.asset('images/logo.png', width: 100),
+            Image.asset('assets/images/logo.png', width: 100),
             Expanded(
               child: Text(''), // 中间用Expanded控件
             ),
@@ -1023,7 +1028,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                   child: Align(
                 alignment: Alignment.center,
-                child: Image.asset('images/logo.png', width: 100),
+                child: Image.asset('assets/images/logo.png', width: 100),
               )),
               Icon(Icons.shopping_cart, color: Color(0xff820E0D)),
             ])));
