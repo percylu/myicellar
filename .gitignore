@@ -44,3 +44,12 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+pubspec.lock
+android/app/src/main/kotlin/com/myicellar/myicellar/MainActivity.kt
+ios/Runner/AppDelegate.swift
+ios/Runner/Runner-Bridging-Header.h
+web/favicon.png
+web/index.html
+web/manifest.json
+web/icons/Icon-192.png
+web/icons/Icon-512.png
