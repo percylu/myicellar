@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:myicellar/utility/MyText.dart';
+import 'package:myicellar/views/store.dart';
 import 'generated/l10n.dart';
 
 const APPBAR_SCROLL_OFFSET = 80;
@@ -992,7 +993,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: MyText(''), // 中间用Expanded控件
             ),
-            Container(
+            
+            GestureDetector(
+            onTap: () {
+              _jumpToStore();
+            },
+            child: Container(
               child: MyText('商店',
                   style: TextStyle(
                       color: Color(0xff4a4a4a),
@@ -1000,6 +1006,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontWeight: FontWeight.bold)),
               margin: EdgeInsets.only(right: 10),
               padding: EdgeInsets.all(10),
+            ),
             ),
             Container(
               child: MyText('试酒活动',
@@ -1055,5 +1062,10 @@ class _MyHomePageState extends State<MyHomePage> {
     //   });
     // }
     // return null;
+  }
+  void _jumpToStore() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return Store();
+    }));
   }
 }
