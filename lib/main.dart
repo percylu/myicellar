@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:myicellar/utility/MyText.dart';
 import 'generated/l10n.dart';
 
 const APPBAR_SCROLL_OFFSET = 80;
@@ -146,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       margin: EdgeInsets.fromLTRB(30, 180, 30, 10),
                       child: Align(
                         alignment: Alignment.topLeft,
-                        child: Text('从此踏上你的美酒之旅。',
+                        child: MyText('从此踏上你的美酒之旅。',
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 fontSize: 40, fontWeight: FontWeight.bold)),
@@ -166,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   Container(
                                       margin: EdgeInsets.only(bottom: 30),
-                                      child: Text('酒迷必备手机程式...',
+                                      child: MyText('酒迷必备手机程式...',
                                           style: TextStyle(fontSize: 18))),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -211,7 +212,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Align(
                                 alignment: FractionalOffset.centerLeft,
-                                child: Text('拣酒有道',
+                                child: MyText('拣酒有道',
                                     style: TextStyle(
                                         fontSize: 30,
                                         color: Color(0xff820E0D))),
@@ -221,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 alignment: FractionalOffset.centerLeft,
                                 child: Container(
                                     margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
-                                    child: Text(
+                                    child: MyText(
                                         '简单几个步骤，即可直接选购逾五千款美酒佳酿。以价钱、品种、国家、产地等不同关键字，轻松搜寻出你的心水靓酒。')),
                               ),
                               Align(
@@ -245,7 +246,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Align(
                                 alignment: FractionalOffset.centerLeft,
-                                child: Text('品酒盛会',
+                                child: MyText('品酒盛会',
                                     style: TextStyle(
                                         fontSize: 30,
                                         color: Color(0xff820E0D))),
@@ -255,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 alignment: FractionalOffset.centerLeft,
                                 child: Container(
                                     margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
-                                    child: Text(
+                                    child: MyText(
                                         '收录城中大小品酒活动，从入门试酒会到酿酒师主持晚宴，都可即时网上报名。')),
                               )
                             ],
@@ -274,7 +275,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Align(
                                 alignment: FractionalOffset.centerLeft,
-                                child: Text('我的酒窖',
+                                child: MyText('我的酒窖',
                                     style: TextStyle(
                                         fontSize: 30,
                                         color: Color(0xff820E0D))),
@@ -284,7 +285,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 alignment: FractionalOffset.centerLeft,
                                 child: Container(
                                     margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
-                                    child: Text(
+                                    child: MyText(
                                         '建立你的云端酒窖，记录你的品酒笔记。添加你的最爱到到愿望清单中，我们会在它们减价时通知你。')),
                               )
                             ],
@@ -299,9 +300,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
                   color: Color(0xff820E0D),
                   child: Column(children: [
-                    Text('5000+',
+                    MyText('5000+',
                         style: TextStyle(fontSize: 38, color: Colors.white)),
-                    Text('上架酒款',
+                    MyText('上架酒款',
                         style: TextStyle(fontSize: 38, color: Colors.white))
                   ]),
                 ),
@@ -311,8 +312,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
                     color: Color(0xffccb9a2),
                     child: Column(children: [
-                      Text('800+', style: TextStyle(fontSize: 38, color: Colors.white)),
-                      Text('品牌阵容', style: TextStyle(fontSize: 38, color: Colors.white))
+                      MyText('800+', style: TextStyle(fontSize: 38, color: Colors.white)),
+                      MyText('品牌阵容', style: TextStyle(fontSize: 38, color: Colors.white))
                     ]),
                   )),
               Expanded(
@@ -320,8 +321,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
                     color: Color(0xff4a4a4a),
                     child: Column(children: [
-                      Text('1500', style: TextStyle(fontSize: 38, color: Colors.white)),
-                      Text('品牌活动', style: TextStyle(fontSize: 38, color: Colors.white))
+                      MyText('1500', style: TextStyle(fontSize: 38, color: Colors.white)),
+                      MyText('品牌活动', style: TextStyle(fontSize: 38, color: Colors.white))
                     ]),
                   ))
             ])),
@@ -331,7 +332,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(children: [
             Container(
               padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
-              child: Text('下载手机程式 尊享更全面功能',
+              child: MyText('下载手机程式 尊享更全面功能',
                   style: TextStyle(
                       fontSize: 38,
                       fontWeight: FontWeight.bold,
@@ -356,7 +357,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
-              child: Text('支持机构',
+              child: MyText('支持机构',
                   style: TextStyle(fontSize: 18, color: Color(0xff4a4a4a))),
             ),
             Container(
@@ -380,7 +381,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(children: [
             Container(
               padding: EdgeInsets.fromLTRB(0, 70, 0, 100),
-              child: Text('顾客意见', style: TextStyle(fontSize: 30)),
+              child: MyText('顾客意见', style: TextStyle(fontSize: 30)),
             ),
             Container(height: 300, child: _bannerSwiper)
           ]),
@@ -390,12 +391,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(children: [
             Container(
               padding: EdgeInsets.fromLTRB(0, 70, 0, 70),
-              child: Text('联系我们',
+              child: MyText('联系我们',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
             ),
             Container(
                 margin: EdgeInsets.only(bottom: 30),
-                child: Text('想紧贴酒坛动向、最新优惠及城中大小活动？立即订阅我们！',
+                child: MyText('想紧贴酒坛动向、最新优惠及城中大小活动？立即订阅我们！',
                     style: TextStyle(fontSize: 18))),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -430,7 +431,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   RaisedButton(
-                    child: Text('订阅'),
+                    child: MyText('订阅'),
                     onPressed: () {},
                   )
                 ]),
@@ -452,7 +453,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                               margin: EdgeInsets.only(bottom: 30),
-                              child: Text('联系我们',
+                              child: MyText('联系我们',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       fontSize: 18, color: Colors.white))),
@@ -462,7 +463,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   Container(
                                     margin: EdgeInsets.only(right: 10),
-                                    child: Text('+852 62891140',
+                                    child: MyText('+852 62891140',
                                         style: TextStyle(
                                             fontSize: 14, color: Colors.white)),
                                   ),
@@ -472,11 +473,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               )),
                           Container(
                               margin: EdgeInsets.only(bottom: 10),
-                              child: Text('info@myicellar.com',
+                              child: MyText('info@myicellar.com',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white))),
                           Container(
-                              child: Text('香港鲗鱼涌华兰路20号华兰中心907室',
+                              child: MyText('香港鲗鱼涌华兰路20号华兰中心907室',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white)))
                         ])),
@@ -488,11 +489,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                               margin: EdgeInsets.only(bottom: 30),
-                              child: Text('云窖',
+                              child: MyText('云窖',
                                   style: TextStyle(
                                       fontSize: 18, color: Colors.white))),
                           Container(
-                              child: Text('加入我们',
+                              child: MyText('加入我们',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white)))
                         ])),
@@ -503,7 +504,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Image.asset('assets/images/whtie-logo.png'),
                     ),
                     Container(
-                        child: Text('@2020 MyiCellar All rights reserved.',
+                        child: MyText('@2020 MyiCellar All rights reserved.',
                             style:
                             TextStyle(fontSize: 14, color: Colors.white)))
                   ]),
@@ -516,7 +517,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                               margin: EdgeInsets.only(bottom: 30),
-                              child: Text('關注我們',
+                              child: MyText('關注我們',
                                   style: TextStyle(
                                       fontSize: 18, color: Colors.white))),
                           Container(
@@ -529,11 +530,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               )),
                           Container(
                               margin: EdgeInsets.only(bottom: 10),
-                              child: Text('条款',
+                              child: MyText('条款',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white))),
                           Container(
-                              child: Text('隐私政策',
+                              child: MyText('隐私政策',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white)))
                         ])),
@@ -556,7 +557,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       margin: EdgeInsets.fromLTRB(30, 150, 30, 10),
                       child: Align(
                         alignment: Alignment.topLeft,
-                        child: Text('从此踏上你的美酒之旅。',
+                        child: MyText('从此踏上你的美酒之旅。',
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 fontSize: 40, fontWeight: FontWeight.bold)),
@@ -571,7 +572,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                               Container(
                                   margin: EdgeInsets.only(bottom: 30),
-                                  child: Text('酒迷必备手机程式...',
+                                  child: MyText('酒迷必备手机程式...',
                                       style: TextStyle(fontSize: 18))),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -614,7 +615,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Align(
                             alignment: FractionalOffset.centerLeft,
-                            child: Text('拣酒有道',
+                            child: MyText('拣酒有道',
                                 style: TextStyle(
                                     fontSize: 30, color: Color(0xff820E0D))),
                           ),
@@ -623,7 +624,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             alignment: FractionalOffset.centerLeft,
                             child: Container(
                                 margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
-                                child: Text(
+                                child: MyText(
                                     '简单几个步骤，即可直接选购逾五千款美酒佳酿。以价钱、品种、国家、产地等不同关键字，轻松搜寻出你的心水靓酒。')),
                           ),
                         ],
@@ -642,7 +643,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Align(
                             alignment: FractionalOffset.centerLeft,
-                            child: Text('品酒盛会',
+                            child: MyText('品酒盛会',
                                 style: TextStyle(
                                     fontSize: 30, color: Color(0xff820E0D))),
                           ),
@@ -651,7 +652,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             alignment: FractionalOffset.centerLeft,
                             child: Container(
                                 margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
-                                child: Text(
+                                child: MyText(
                                     '收录城中大小品酒活动，从入门试酒会到酿酒师主持晚宴，都可即时网上报名。')),
                           )
                         ],
@@ -669,7 +670,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Align(
                             alignment: FractionalOffset.centerLeft,
-                            child: Text('我的酒窖',
+                            child: MyText('我的酒窖',
                                 style: TextStyle(
                                     fontSize: 30, color: Color(0xff820E0D))),
                           ),
@@ -678,7 +679,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             alignment: FractionalOffset.centerLeft,
                             child: Container(
                                 margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
-                                child: Text(
+                                child: MyText(
                                     '建立你的云端酒窖，记录你的品酒笔记。添加你的最爱到到愿望清单中，我们会在它们减价时通知你。')),
                           )
                         ],
@@ -692,9 +693,9 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
             color: Color(0xff820E0D),
             child: Column(children: [
-              Text('5000+',
+              MyText('5000+',
                   style: TextStyle(fontSize: 38, color: Colors.white)),
-              Text('上架酒款', style: TextStyle(fontSize: 38, color: Colors.white))
+              MyText('上架酒款', style: TextStyle(fontSize: 38, color: Colors.white))
             ]),
           ),
           Container(
@@ -702,8 +703,8 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
             color: Color(0xffccb9a2),
             child: Column(children: [
-              Text('800+', style: TextStyle(fontSize: 38, color: Colors.white)),
-              Text('品牌阵容', style: TextStyle(fontSize: 38, color: Colors.white))
+              MyText('800+', style: TextStyle(fontSize: 38, color: Colors.white)),
+              MyText('品牌阵容', style: TextStyle(fontSize: 38, color: Colors.white))
             ]),
           ),
           Container(
@@ -711,8 +712,8 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.fromLTRB(0, 80, 0, 80),
             color: Color(0xff4a4a4a),
             child: Column(children: [
-              Text('1500', style: TextStyle(fontSize: 38, color: Colors.white)),
-              Text('品牌活动', style: TextStyle(fontSize: 38, color: Colors.white))
+              MyText('1500', style: TextStyle(fontSize: 38, color: Colors.white)),
+              MyText('品牌活动', style: TextStyle(fontSize: 38, color: Colors.white))
             ]),
           )
         ])),
@@ -722,7 +723,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(children: [
             Container(
               padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
-              child: Text('下载手机程式 尊享更全面功能',
+              child: MyText('下载手机程式 尊享更全面功能',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 30,
@@ -748,7 +749,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
-              child: Text('支持机构',
+              child: MyText('支持机构',
                   style: TextStyle(fontSize: 18, color: Color(0xff4a4a4a))),
             ),
             Container(
@@ -772,7 +773,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(children: [
             Container(
               padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
-              child: Text('顾客意见', style: TextStyle(fontSize: 30)),
+              child: MyText('顾客意见', style: TextStyle(fontSize: 30)),
             ),
             Container(height: 300, child: _bannerSwiper)
           ]),
@@ -782,13 +783,13 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(children: [
             Container(
               padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
-              child: Text('联系我们',
+              child: MyText('联系我们',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
             ),
             Container(
                 margin: EdgeInsets.only(bottom: 30),
                 width: screenSize.width - 60,
-                child: Text('想紧贴酒坛动向、最新优惠及城中大小活动？立即订阅我们！',
+                child: MyText('想紧贴酒坛动向、最新优惠及城中大小活动？立即订阅我们！',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 18))),
             Container(
@@ -822,7 +823,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: screenSize.width / 2.5,
               margin: EdgeInsets.only(top: 15),
               child: RaisedButton(
-                child: Text('订阅'),
+                child: MyText('订阅'),
                 onPressed: () {},
               ),
             ),
@@ -844,7 +845,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                               margin: EdgeInsets.only(bottom: 15),
-                              child: Text('联系我们',
+                              child: MyText('联系我们',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       fontSize: 18, color: Colors.white))),
@@ -854,7 +855,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   Container(
                                     margin: EdgeInsets.only(right: 10),
-                                    child: Text('+852 62891140',
+                                    child: MyText('+852 62891140',
                                         style: TextStyle(
                                             fontSize: 14, color: Colors.white)),
                                   ),
@@ -864,11 +865,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               )),
                           Container(
                               margin: EdgeInsets.only(bottom: 10),
-                              child: Text('info@myicellar.com',
+                              child: MyText('info@myicellar.com',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white))),
                           Container(
-                              child: Text('香港鲗鱼涌华兰路20号华兰中心907室',
+                              child: MyText('香港鲗鱼涌华兰路20号华兰中心907室',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white)))
                         ])),
@@ -880,11 +881,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                               margin: EdgeInsets.only(bottom: 15),
-                              child: Text('云窖',
+                              child: MyText('云窖',
                                   style: TextStyle(
                                       fontSize: 18, color: Colors.white))),
                           Container(
-                              child: Text('加入我们',
+                              child: MyText('加入我们',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white)))
                         ])),
@@ -896,7 +897,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                               margin: EdgeInsets.only(bottom: 15),
-                              child: Text('關注我們',
+                              child: MyText('關注我們',
                                   style: TextStyle(
                                       fontSize: 18, color: Colors.white))),
                           Container(
@@ -909,11 +910,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               )),
                           Container(
                               margin: EdgeInsets.only(bottom: 10),
-                              child: Text('条款',
+                              child: MyText('条款',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white))),
                           Container(
-                              child: Text('隐私政策',
+                              child: MyText('隐私政策',
                                   style: TextStyle(
                                       fontSize: 14, color: Colors.white)))
                         ])),
@@ -923,7 +924,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Image.asset('assets/images/whtie-logo.png'),
                   ),
                   Container(
-                      child: Text('@2020 MyiCellar All rights reserved.',
+                      child: MyText('@2020 MyiCellar All rights reserved.',
                           style: TextStyle(fontSize: 14, color: Colors.white)))
                 ]),
               ]),
@@ -972,7 +973,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   decoration: BoxDecoration(
                       border: Border(
                           bottom: BorderSide(width: 2, color: Colors.black))),
-                  child: Text(cur['content'])),
+                  child: MyText(cur['content'])),
               Text(cur['name'], style: TextStyle(fontWeight: FontWeight.bold)),
               Text(cur['user']),
             ],
@@ -989,10 +990,10 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Row(children: [
             Image.asset('assets/images/logo.png', width: 100),
             Expanded(
-              child: Text(''), // 中间用Expanded控件
+              child: MyText(''), // 中间用Expanded控件
             ),
             Container(
-              child: Text('商店',
+              child: MyText('商店',
                   style: TextStyle(
                       color: Color(0xff4a4a4a),
                       fontSize: 18,
@@ -1001,7 +1002,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: EdgeInsets.all(10),
             ),
             Container(
-              child: Text('试酒活动',
+              child: MyText('试酒活动',
                   style: TextStyle(
                       color: Color(0xff4a4a4a),
                       fontSize: 18,
